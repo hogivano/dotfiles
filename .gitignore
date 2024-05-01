@@ -1,0 +1,12 @@
+*
+!.gitignore
+!Readme.md
+
+!nvim
+!nvim/**/*
+
+!skhd
+!skhd/**/*
+
+!yabai
+!yabai/**/*
