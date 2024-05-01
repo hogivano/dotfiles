@@ -30,6 +30,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
+vim.g.lazyvim_python_lsp = "pyright"
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
