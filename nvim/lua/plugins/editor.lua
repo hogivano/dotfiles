@@ -1,19 +1,21 @@
 return {
 	-- Hihglight colors
 	{
-		'romgrk/barbar.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
-      -- insert_at_start = true,
-      -- …etc.
-    },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+		},
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = "^1.0.0", -- optional: only update when a new 1.x version is released
 		setup = function()
 			require("barbar").setup({
 				-- Enable/disable animations
@@ -32,15 +34,15 @@ return {
 				clickable = true,
 
 				-- Excludes buffers from the tabline
-				exclude_ft = {'javascript'},
-				exclude_name = {'package.json'},
+				exclude_ft = { "javascript" },
+				exclude_name = { "package.json" },
 
 				-- A buffer to this direction will be focused (if it exists) when closing the current buffer.
 				-- Valid options are 'left' (the default), 'previous', and 'right'
-				focus_on_close = 'left',
+				focus_on_close = "left",
 
 				-- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
-				hide = {extensions = true, inactive = true},
+				hide = { extensions = true, inactive = true },
 
 				-- Disable highlighting alternate buffers
 				highlight_alternate = false,
@@ -56,18 +58,18 @@ return {
 					-- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
 					buffer_index = false,
 					buffer_number = false,
-					button = '',
+					button = "",
 					-- Enables / disables diagnostic symbols
 					diagnostics = {
-						[vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
-						[vim.diagnostic.severity.WARN] = {enabled = false},
-						[vim.diagnostic.severity.INFO] = {enabled = false},
-						[vim.diagnostic.severity.HINT] = {enabled = true},
+						[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+						[vim.diagnostic.severity.WARN] = { enabled = false },
+						[vim.diagnostic.severity.INFO] = { enabled = false },
+						[vim.diagnostic.severity.HINT] = { enabled = true },
 					},
 					gitsigns = {
-						added = {enabled = true, icon = '+'},
-						changed = {enabled = true, icon = '~'},
-						deleted = {enabled = true, icon = '-'},
+						added = { enabled = true, icon = "+" },
+						changed = { enabled = true, icon = "~" },
+						deleted = { enabled = true, icon = "-" },
 					},
 					filetype = {
 						-- Sets the icon's highlight group.
@@ -77,25 +79,25 @@ return {
 						-- Requires `nvim-web-devicons` if `true`
 						enabled = true,
 					},
-					separator = {left = '▎', right = ''},
+					separator = { left = "▎", right = "" },
 
 					-- If true, add an additional separator at the end of the buffer list
 					separator_at_end = true,
 
 					-- Configure the icons on the bufferline when modified or pinned.
 					-- Supports all the base icon options.
-					modified = {button = '●'},
-					pinned = {button = '', filename = true},
+					modified = { button = "●" },
+					pinned = { button = "", filename = true },
 
 					-- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
-					preset = 'default',
+					preset = "default",
 
 					-- Configure the icons on the bufferline based on the visibility of a buffer.
 					-- Supports all the base icon options, plus `modified` and `pinned`.
-					alternate = {filetype = {enabled = false}},
-					current = {buffer_index = true},
-					inactive = {button = '×'},
-					visible = {modified = {buffer_number = false}},
+					alternate = { filetype = { enabled = false } },
+					current = { buffer_index = true },
+					inactive = { button = "×" },
+					visible = { modified = { buffer_number = false } },
 				},
 
 				-- If true, new buffers will be inserted at the start/end of the list.
@@ -127,26 +129,26 @@ return {
 					NvimTree = true,
 					-- Or, specify the text used for the offset:
 					undotree = {
-						text = 'undotree',
-						align = 'center', -- *optionally* specify an alignment (either 'left', 'center', or 'right')
+						text = "undotree",
+						align = "center", -- *optionally* specify an alignment (either 'left', 'center', or 'right')
 					},
 					-- Or, specify the event which the sidebar executes when leaving:
-					['neo-tree'] = {event = 'BufWipeout'},
+					["neo-tree"] = { event = "BufWipeout" },
 					-- Or, specify all three
-					Outline = {event = 'BufWinLeave', text = 'symbols-outline', align = 'right'},
+					Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
 				},
 
 				-- New buffer letters are assigned in this order. This order is
 				-- optimal for the qwerty keyboard layout but might need adjustment
 				-- for other layouts.
-				letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+				letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 
 				-- Sets the name of unnamed buffers. By default format is "[Buffer X]"
 				-- where X is the buffer number. But only a static string is accepted here.
 				no_name_title = nil,
 			})
 		end,
-  },
+	},
 	{
 		"echasnovski/mini.hipatterns",
 		event = "BufReadPre",
